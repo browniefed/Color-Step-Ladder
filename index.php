@@ -19,7 +19,8 @@
 			</p>
 		</section>
 		<nav >
-			<a href="#" class="add_color" id="add_color">Add Color</a>
+			<input id="newcolor" type="text">
+			<button id="addcolor" type="button" disabled="disabled">Add Color</button>
 		</nav>
 		<section class="colors">
 			<div class="color">
@@ -27,11 +28,11 @@
 					<li>#000000</li>
 				</ul>
 				<ul class="copyoptions">
-					<li>Hex</li>
-					<li>RGB</li>
-					<li>HSL</li>
-					<li>CMYK</li>
-					<li>CSS</li>
+					<li class="hex">Hex</li>
+					<li class="rgb">RGB</li>
+					<li class="HSL">HSL</li>
+					<li class="CMYK">CMYK</li>
+					<li class="CSS">CSS</li>
 				</ul>
 			</div>
 		</section>
