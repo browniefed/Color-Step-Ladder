@@ -18,8 +18,8 @@
 			Yeah there are a lot of color pallete makers out there but I figure I'd try my hand at one and learn ember.js and building single page web apps while I was at it.
 			</p>
 		</section>
-		<nav>
-			<a href="#">Add Color</a>
+		<nav >
+			<a href="#" class="add_color" id="add_color">Add Color</a>
 		</nav>
 		<section class="colors">
 			<div class="color">
@@ -39,7 +39,9 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 		<script src="js/libs/handlebars-1.0.0.beta.6.js"></script>
-		<script src="js/libs/ember-1.0.0-pre.2.min.js"></script>
+		<script src="js/libs/underscore.js"></script>
+		<script src="js/libs/backbone.js"></script>
+		<script src="js/libs/d3.vs.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>
