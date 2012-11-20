@@ -1,3 +1,0 @@
-function ColorBloom(c) {
-	
-}
