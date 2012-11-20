@@ -1,0 +1,51 @@
+.color {
+	width: 200px;
+	float: left;
+	display: block;
+	margin-left: 10px;
+}
+.color .colorinput:focus {
+	color: #242424;
+}
+.color .colorinput {
+    clear: both;
+    color: #CCCCCC;
+    display: block;
+    font-size: 1.5em;
+    padding: 10px 0;
+    width: 150px;
+}
+.color .steps {
+	float: left;
+	width: 150px;
+	min-height: 700px;
+	list-style: none;
+}
+.color .steps li {
+	width: 150px;
+	display: block;
+	clear: both;
+	height: 50px;
+}
+.color .copyoptions {
+	float: left;
+	width: 50px;
+}
+.color .copyoptions li {
+	display: block;
+	width: 30px;
+	height: 60px;
+	text-align: center;
+	position: relative;
+	background: #EEE;
+	border-radius: 0 5px 5px 0;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+	.copyoptions li span {
+		transform-origin: 0 0;
+		transform: rotate(90deg);
+		position: absolute;
+		top: 10px;
+		left: 23px;
+	}
