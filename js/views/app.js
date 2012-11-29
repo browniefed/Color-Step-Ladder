@@ -4,30 +4,41 @@ var app = app || {};
 
 		el: '#colorapp',
 		events: {
-			'keyup #newcolor': 'validatecolor',
-			'click #addcolor':  'addcolor'
+			'keyup #colorinput': 'validatecolor',
+			'click #addcolor':  'createcolor',
+			'change #colorinput': 'validatecolor'
 		},
 		initialize: function() {
-			this.input = this.$('#newcolor');
+			this.input = this.$('#colorinput');
 			this.addColorButton = this.$('#addcolor');
-
-			app.Colors.on('add', this.addColor, this);
+			this.preview = this.$('#colorpreview');
+			app.Colors.on('add', this.addcolor, this);
 			app.Colors.on('all', this.render, this);
+			this.validatecolor();
 		},
 		render: function() {
 
 		},
-		addcolor: function() {
-			var color = new app.ColorView({model: color});
-			$('#colors').append(view.render().el);
+		addcolor: function(color) {
+			var view = new app.ColorView({model: color});
+			view.render().el;
+		},
+
+		createcolor: function() {
+			var val = this.input.val().trim();
+			app.Colors.create({color: val});
+			this.input.val('').trigger('change');
 		},
 		validatecolor: function() {
+			
 			var re = /^#?(?:[0-9a-fA-F]{3}){1,2}$/i,
 			match = re.exec(this.input.val().trim());
 			if (match) {
 				this.addColorButton.attr('disabled',false);
+				this.preview.css('background-color', this.input.val().trim());
 			} else {
 				this.addColorButton.attr('disabled',true);
+				this.preview.css('background-color', '#FFFFFF');
 			}
 		}
 	});

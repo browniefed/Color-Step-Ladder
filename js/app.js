@@ -1,6 +1,6 @@
 var app = app || {};
 
 (function() {
-	//FIRE!!!
+	//Init the app
 	new app.AppView();
 }())

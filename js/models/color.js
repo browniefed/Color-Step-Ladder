@@ -1,4 +1,5 @@
 var app = app || {};
+
 (function() {
 	'use strict';
 
@@ -10,4 +11,5 @@ var app = app || {};
 			cmyk:'cmyk(0,0,0,0)',
 		}
 	});
+
 }())
