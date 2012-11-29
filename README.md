@@ -1,8 +1,7 @@
-Color Boom
+Color Step Ladder
 -----------
-Yeah the name is probably for something else but sue me.
 As always this is licensed under WTFPL
 
-Insipired by 0to255.com, created with Backbone.js, D3.js
+Insipired by 0to255.com, created with Backbone.js, and ColorLadderLib
 
-Live Demo: http://colorboom.herokuapp.com/
+Live Demo: http://colorladder.herokuapp.com/
