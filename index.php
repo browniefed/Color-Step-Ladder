@@ -26,7 +26,8 @@
 			<div class="color">
 				<ul class="steps">
 					{{#each colors}}
-					<li style="background-color:{{this.value}};">{{this.value}}</li>
+
+					<li style="background-color:{{this.value}}; color:{{worbcolor}};">{{this.value}}</li>
 					{{/each}}
 				</ul>
 			</div>

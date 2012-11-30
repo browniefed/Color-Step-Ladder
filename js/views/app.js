@@ -30,10 +30,10 @@ var app = app || {};
 			this.input.val('').trigger('change');
 		},
 		validatecolor: function() {
-			
-			var re = /^#?(?:[0-9a-fA-F]{3}){1,2}$/i,
-			match = re.exec(this.input.val().trim());
-			if (match) {
+
+			var valid = ColorLadder.Convert().Validate(this.input.val().trim());
+		
+			if (valid) {
 				this.addColorButton.attr('disabled',false);
 				this.preview.css('background-color', this.input.val().trim());
 			} else {

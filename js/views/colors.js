@@ -8,7 +8,10 @@ var app = app || {};
 		template: Handlebars.compile($('#color_template').html()),
 		
 		initialize: function() {
-			//this.model.on('destroy', this.remove, this);
+			Handlebars.registerHelper('worbcolor', function() {
+			var textColor = (parseFloat(this.step) >= .5 ? '#242424' : '#FFFFFF');
+			  return new Handlebars.SafeString(textColor);
+			});
 		},
 
 		render: function() {
