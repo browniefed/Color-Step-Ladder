@@ -14,19 +14,24 @@ var app = app || {};
 			this.preview = this.$('#colorpreview');
 			app.Colors.on('add', this.addcolor, this);
 			app.Colors.on('all', this.render, this);
+			var height = $(window).height() - this.$el.find('.colorheader').outerHeight() - 14;
+			this.$el.find('#colors').height(height);
 			this.validatecolor();
+
 		},
 		render: function() {
-
+			console.log('rendering app');
 		},
 		addcolor: function(color) {
 			var view = new app.ColorView({model: color});
-			view.render().el;
+			$('#colors').append(view.render().el);
+			view.applyScrollbar();
 		},
 
 		createcolor: function() {
-			var val = this.input.val().trim();
-			app.Colors.create({color: val});
+			var val = this.input.val().trim(),
+				list = ColorLadder.Convert(val).List({step:3});
+			app.Colors.create({hex: val, color: list});
 			this.input.val('').trigger('change');
 		},
 		validatecolor: function() {

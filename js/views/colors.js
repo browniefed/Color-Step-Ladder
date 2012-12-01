@@ -4,10 +4,15 @@ var app = app || {};
 	app.ColorView = Backbone.View.extend({
 		
 		tagName: 'div',
-		el: '#colors',
+		className: '.djfjd',
+		events: {
+			'click .delete': 'clear'
+		},
 		template: Handlebars.compile($('#color_template').html()),
 		
 		initialize: function() {
+			this.model.on('destroy', this.remove, this);
+
 			Handlebars.registerHelper('worbcolor', function() {
 			var textColor = (parseFloat(this.step) >= .5 ? '#242424' : '#FFFFFF');
 			  return new Handlebars.SafeString(textColor);
@@ -15,15 +20,17 @@ var app = app || {};
 		},
 
 		render: function() {
-			steps = this.getSteps();
-			console.log(this.$el);
-			this.$el.append(this.template(steps));
+
+			this.$el.html(this.template(this.model.get('color')));
 			return this;
 		},
 
-		getSteps: function() {
-			var color = this.model.get('color');
-			return {colors:ColorLadder.Convert(color).List({step:3})};
+		clear: function() {
+			this.model.destroy();
+		},
+		applyScrollbar: function() {
+			console.log(this.$el);
+			this.$el.find('.steps').mCustomScrollbar();
 		}
 	});
 }());

@@ -6,7 +6,7 @@
 		<link href="css/reset.css" type="text/css" rel="stylesheet">
 		<link href="css/normalize.css" type="text/css" rel="stylesheet">
 		<link href="css/style.css" type="text/css" rel="stylesheet">
-		
+		<link href="css/jquery.mCustomScrollbar.css" type="text/css" rel="stylesheet">
 	</head>
 	<body>
 		<section id="colorapp" class="colorapp">
@@ -25,17 +25,23 @@
 		<script id="color_template" type="text/template">
 			<div class="color">
 				<ul class="steps">
-					{{#each colors}}
+					{{#each this}}
 
 					<li style="background-color:{{this.value}}; color:{{worbcolor}};">{{this.value}}</li>
 					{{/each}}
 				</ul>
+				<div class="delete">
+				X
+				</div>
 			</div>
 		</script>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 		<script src="js/libs/handlebars-1.0.0.beta.6.js"></script>
+		<script src="js/libs/jquery.mousewheel.min.js"></script>
+		<script src="js/libs/jquery.mCustomScrollbar.min.js"></script>
 		<script src="js/libs/colorladder.js"></script>
 		<script src="js/libs/underscore.js"></script>
 		<script src="js/libs/backbone.js"></script>
